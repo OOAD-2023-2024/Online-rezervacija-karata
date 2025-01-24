@@ -1,0 +1,66 @@
+﻿@model OnlineProdajaKarata.Models.Manifestacija
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="my-4">Kreiraj novu manifestaciju</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <div class="form-group">
+                <label asp-for="NazivManifestacije" class="control-label"></label>
+                <input asp-for="NazivManifestacije" class="form-control" placeholder="Unesite naziv manifestacije" />
+                <span asp-validation-for="NazivManifestacije" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatumVrijeme" class="control-label"></label>
+                <input asp-for="DatumVrijeme" class="form-control" placeholder="Unesite datum i vrijeme" />
+                <span asp-validation-for="DatumVrijeme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kategorija" class="control-label"></label>
+                <input asp-for="Kategorija" class="form-control" placeholder="Unesite kategoriju" />
+                <span asp-validation-for="Kategorija" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MjestoOdrzavanja" class="control-label"></label>
+                <input asp-for="MjestoOdrzavanja" class="form-control" placeholder="Unesite mjesto održavanja" />
+                <span asp-validation-for="MjestoOdrzavanja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrajanjeManifestacije" class="control-label"></label>
+                <input asp-for="TrajanjeManifestacije" class="form-control" placeholder="Unesite trajanje manifestacije" />
+                <span asp-validation-for="TrajanjeManifestacije" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpisManifestacije" class="control-label"></label>
+                <textarea asp-for="OpisManifestacije" class="form-control" rows="3" placeholder="Unesite opis manifestacije"></textarea>
+                <span asp-validation-for="OpisManifestacije" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CijenaKarte" class="control-label"></label>
+                <input asp-for="CijenaKarte" class="form-control" placeholder="Unesite cijenu karte" />
+                <span asp-validation-for="CijenaKarte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Slika" class="control-label"></label>
+                <input asp-for="Slika" class="form-control" placeholder="Unesite URL slike" />
+                <span asp-validation-for="Slika" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary" style="width: 49%;">Kreiraj</button>
+                <a asp-action="Index" class="btn btn-secondary" style="width: 49%;">Nazad</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
